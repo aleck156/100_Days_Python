@@ -3,17 +3,16 @@
 # parameters is wht functions are defined with to handle
 
 from sys import exit
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-print(direction, text, shift)
-
 def text_modification(text, shift, direction):
-    text_encoded = []
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     alphabet_length = len(alphabet)
+    shift %= alphabet_length
+    text_encoded = []
     for letter in text:
         try:
             position = alphabet.index(letter)
