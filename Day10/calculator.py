@@ -26,7 +26,6 @@ operations = {
     '-': subtract,
     '*': multiply,
     '/': divide
-
 }
 
 def loop_choice():
@@ -41,9 +40,6 @@ def calculate_number(first_number, second_number, operation):
 user_choice = 'y'
 first_number = get_first_number()
 result = 0
-
-
-
 
 while user_choice != 'q':
     operation = input('Pick an operation [+ - * /]: ')[:1]
