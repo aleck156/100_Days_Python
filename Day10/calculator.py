@@ -36,8 +36,7 @@ def loop_choice():
     return input('Your choice [y/n/q]: ')
     
 def calculate_number(first_number, second_number, operation):
-    function_name = operations.get(operation)
-    return function_name(first_number, second_number)
+    return operations[operation](first_number, second_number)
 
 user_choice = 'y'
 first_number = get_first_number()
