@@ -17,19 +17,36 @@ player_hand = []
 computer_hand = []
 deck = [3,4,5,6,7,8,9,10,10,10,11]
 
-def count_score(card_list):
-    score = 0
-    aces_count = 0
-    for card in card_list:
-        if card == 11:
-            aces_count += 1
-            score += 11
-        else:
-            score += card
-        if score > 21 and aces_count >0:
-            score -= 10
-            aces_count -= 1
+def count_score(card_list:list):
+    """Returns a score
+    When Ace (value 11) is detected, and the score is beyond 21, then 11 is converted to 1
+
+    Args:
+        card_list (list): list of player cards
+
+    Returns:
+        int: player's hand total score, adjusted for 11 -> 1 when value of 21 is exceeded
+    """
+    score = sum(card_list)
+    aces_count = card_list.count(11)
+    while score > 21 and aces_count > 0:
+        score -= 10
+        aces_count -= 1
     return score
+
+
+    # score = 0
+    # aces_count = 0
+    # for card in card_list:
+    #     if card == 11:
+    #         aces_count += 1
+    #         score += 11
+    #     else:
+    #         score += card
+    #     if score > 21 and aces_count >0:
+    #         score -= 10
+    #         aces_count -= 1
+    # return score
 
 def pick_card():
     return deck[random.randint(0,len(deck)-1)]
@@ -72,7 +89,7 @@ while player_choice == 'y':
         elif computer_score < player_score:
             print(f'You have won the game! Computer score is {computer_score}, your score is {player_score}.')
         else:
-            print(f'It\'s a tie!')            
+            print(f'It\'s a tie!')
         print(f'Your final score is {count_score(player_hand)}')
 
 print(f'Randomized computer cards: {computer_hand} -> {count_score(computer_hand)}')
