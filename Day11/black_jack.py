@@ -9,9 +9,11 @@
 
 ## The code
 import random
+import sys
+from traceback import print_tb
 from art import logo
 
-player_hand = [7, 4, 11]
+player_hand = []
 computer_hand = []
 deck = [3,4,5,6,7,8,9,10,10,10,11]
 
@@ -34,9 +36,43 @@ def pick_card():
 
 print(logo)
 
-print(f'{player_hand} -> {count_score(player_hand)}')
+player_choice = 'y'
 
-while count_score(computer_hand) <= 17:
-    computer_hand.append(pick_card())
+def init(player, computer):
+    player.append(pick_card())
+    player.append(pick_card())
+    computer.append(pick_card())
+    computer.append(pick_card())
+    print(f'Your current hand is {player} and score {count_score(player)}')
+    print(f'Computer hand is {computer} and score {count_score(computer)}')
+
+init(player_hand, computer_hand)
+
+while player_choice == 'y':
+    player_choice = input('Do you want to pick a card [y/n]? ')
+    if player_choice == 'y':
+        computer_hand.append(pick_card())
+        computer_score = count_score(computer_hand)
+        print(f'Computer score is {computer_score}')
+        if computer_score > 21:
+            print(f'You have won the game! Computer score is {computer_score}, your score is {player_score}.')
+            break
+        player_hand.append(pick_card())
+        player_score = count_score(player_hand)
+        print(f'Your current hand is {player_hand} and score {player_score}')
+        if player_score > 21:
+            print(F'You have lost the game! Computer score is {computer_score}, your score is {player_score}.')
+            break
+        
+    elif player_choice == 'n':
+        computer_score = count_score(computer_hand)
+        player_score = count_score(player_hand)
+        if computer_score > player_score:
+            print(F'You have lost the game! Computer score is {computer_score}, your score is {player_score}.')
+        elif computer_score < player_score:
+            print(f'You have won the game! Computer score is {computer_score}, your score is {player_score}.')
+        else:
+            print(f'It\'s a tie!')            
+        print(f'Your final score is {count_score(player_hand)}')
 
 print(f'Randomized computer cards: {computer_hand} -> {count_score(computer_hand)}')
