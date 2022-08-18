@@ -30,9 +30,7 @@ def set_difficulty():
     else:
         print("Could not determine ... choosing the hard way!")
 
-def check_guess(guess):
-    global answer
-    global attempts_left
+def check_guess(guess, answer, attempts_left):
     if guess == answer:
         print(f'Your guess was correct! The answer was {guess}')
         sys.exit()
@@ -40,13 +38,13 @@ def check_guess(guess):
         print('Too high')
     elif guess < answer:
         print('Too low!')
-    attempts_left -= 1
+    return attempts_left - 1
 
 attempts_left = set_difficulty()
 
 while attempts_left > 0:
     print(f'You have {attempts_left} attempts remaining to guess the number')
     guess = int(input('Make a guess: '))
-    check_guess(guess)
+    attempts_left = check_guess(guess, answer, attempts_left)
 
 print('Sorry, you run out of attempts left ...')
