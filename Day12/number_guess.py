@@ -8,6 +8,38 @@
 # If they run out of turns, provide feedback to the player. 
 # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
+import random
+import sys
 from art import logo
 
 print(logo)
+print('Welcome to the guessing game')
+
+
+attempts_left = 5
+answer = random.randint(1, 100)
+
+def set_difficulty():
+    global attempts_left
+    difficulty = input(f'Choose a difficulty [easy/e/hard/h]: ')[:1].lower()
+    if difficulty == 'e':
+        attempts_left = 10
+    elif difficulty == 'h':
+        attempts_left = 5
+    else:
+        print("Could not determine ... choosing the hard way!")
+
+while attempts_left > 0:
+    set_difficulty()
+    print(f'You have {attempts_left} attempts remaining to guess the number')
+    guess = int(input('Make a guess: '))
+    if guess == answer:
+        print(f'Your guess was correct! The answer was {guess}')
+        sys.exit()
+    elif guess > answer:
+        print('Too high')
+    elif guess < answer:
+        print('Too low!')
+    attempts_left -= 1
+
+print('Sorry, you run out of attempts left ...')
