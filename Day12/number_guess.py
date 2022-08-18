@@ -12,24 +12,21 @@ import random
 import sys
 from art import logo
 
+answer = random.randint(1, 100)
+
 print(logo)
 print('Welcome to the guessing game')
-
-
-attempts_left = 5
-answer = random.randint(1, 100)
 
 def set_difficulty():
     """Select between easy and hard mode
     easy - 10 attemps
     hard - 5 attempts
     """
-    global attempts_left
     difficulty = input(f'Choose a difficulty [easy/e/hard/h]: ')[:1].lower()
     if difficulty == 'e':
-        attempts_left = 10
+        return 10
     elif difficulty == 'h':
-        attempts_left = 5
+        return 5
     else:
         print("Could not determine ... choosing the hard way!")
 
@@ -45,8 +42,9 @@ def check_guess(guess):
         print('Too low!')
     attempts_left -= 1
 
+attempts_left = set_difficulty()
+
 while attempts_left > 0:
-    set_difficulty()
     print(f'You have {attempts_left} attempts remaining to guess the number')
     guess = int(input('Make a guess: '))
     check_guess(guess)
