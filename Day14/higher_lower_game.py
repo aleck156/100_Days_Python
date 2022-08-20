@@ -18,17 +18,17 @@ def display_choices(pick_a, pick_b):
     print(vs)
     print(f'Compare B: {pick_b["name"]}, {pick_b["description"]}, from {pick_b["country"]}')
 
-def compare_picks(guess, pick_a, pick_b, player_score):
-    if guess == 'a':
-        if pick_a['follower_count'] > pick_b['follower_count']:
-            return player_score +1
-        else:
-            game_over(player_score)
-    elif guess == 'b':
-        if pick_a['follower_count'] < pick_b['follower_count']:
-            return player_score + 1
-        else:
-            game_over(player_score)
+def check_answer(guess, followers_a, followers_b):
+    if followers_a > followers_b:
+        return guess == 'a'
+    if followers_a < followers_b:
+        return guess == 'b'
+
+def compare_picks(guess, followers_a, followers_b, player_score):
+    if check_answer(guess, followers_a, followers_b):
+        return player_score + 1
+    else:
+        game_over(player_score)
 
 def init_loop(score):
     os.system('clear')
