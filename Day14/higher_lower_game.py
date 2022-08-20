@@ -24,12 +24,12 @@ def display_choices(pick_one, pick_two):
 
 def compare_picks(guess, pick_a, pick_b, player_score):
     if guess == 'a':
-        if pick_one['follower_count'] > pick_two['follower_count']:
+        if pick_a['follower_count'] > pick_b['follower_count']:
             return player_wins(player_score)
         else:
             game_over(player_score)
     elif guess == 'b':
-        if pick_one['follower_count'] < pick_two['follower_count']:
+        if pick_a['follower_count'] < pick_b['follower_count']:
             return player_wins(player_score)
         else:
             game_over(player_score)
