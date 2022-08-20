@@ -17,10 +17,10 @@ def pick_random(data, data_len):
     pick_two = data[random.randint(0,data_len)]
     return pick_one, pick_two
 
-def display_choices(pick_one, pick_two):
-    print(f'Compare A: {pick_one["name"]}, {pick_one["description"]}, from {pick_one["country"]}')
+def display_choices(pick_a, pick_b):
+    print(f'Compare A: {pick_a["name"]}, {pick_a["description"]}, from {pick_a["country"]}')
     print(vs)
-    print(f'Compare B: {pick_two["name"]}, {pick_two["description"]}, from {pick_two["country"]}')
+    print(f'Compare B: {pick_b["name"]}, {pick_b["description"]}, from {pick_b["country"]}')
 
 def compare_picks(guess, pick_a, pick_b, player_score):
     if guess == 'a':
