@@ -1,0 +1,3 @@
+# Day 15 is all about configuring IDE environment
+# Chose to go with PyCharm Community Edition
+# ...
