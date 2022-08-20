@@ -46,4 +46,4 @@ while True:
     
     guess = input('Who has more followers? Type \'A\' or \'B\': ').lower()
 
-    player_score = compare_picks(guess, pick_one, pick_two, player_score)    
+    player_score = compare_picks(guess, pick_one["follower_count"], pick_two["follower_count"], player_score)
