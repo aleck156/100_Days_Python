@@ -30,15 +30,16 @@ def compare_picks(guess, pick_a, pick_b, player_score):
         else:
             game_over(player_score)
 
+def init_loop(score):
+    os.system('clear')
+    print(logo)
+    print(f'You\'re right! Current score: {score}')
 
 player_score = 0
 data_len = len(data)
 
-
 while True:
-    os.system('clear')
-    print(logo)
-    print(f'You\'re right! Current score: {player_score}')
+    init_loop(player_score)
     pick_one, pick_two = pick_random(data, data_len)
 
     display_choices(pick_one, pick_two)
