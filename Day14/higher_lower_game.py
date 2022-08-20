@@ -12,29 +12,39 @@ def player_wins(player_score):
     print(f'You\'re right! Current score: {player_score}')
     return player_score
 
+def pick_random(data, data_len):
+    pick_one = data[random.randint(0,data_len)]
+    pick_two = data[random.randint(0,data_len)]
+    return pick_one, pick_two
+
+def display_choices(pick_one, pick_two):
+    print(f'Compare A: {pick_one["name"]}, {pick_one["description"]}, from {pick_one["country"]}')
+    print(vs)
+    print(f'Compare B: {pick_two["name"]}, {pick_two["description"]}, from {pick_two["country"]}')
+
+def compare_picks(guess, pick_a, pick_b, player_score):
+    if guess == 'a':
+        if pick_one['follower_count'] > pick_two['follower_count']:
+            return player_wins(player_score)
+        else:
+            game_over(player_score)
+    elif guess == 'b':
+        if pick_one['follower_count'] < pick_two['follower_count']:
+            return player_wins(player_score)
+        else:
+            game_over(player_score)
+
+
 player_score = 0
 data_len = len(data)
 
 print(logo)
 
 while True:
-    pick_one = data[random.randint(0,data_len)]
-    pick_two = data[random.randint(0,data_len)]
+    pick_one, pick_two = pick_random(data, data_len)
+
+    display_choices(pick_one, pick_two)
     
-    print(f'Compare A: {pick_one["name"]}, {pick_one["description"]}, from {pick_one["country"]}')
-    print(vs)
-    print(f'Compare B: {pick_two["name"]}, {pick_two["description"]}, from {pick_two["country"]}')
+    guess = input('Who has more followers? Type \'A\' or \'B\': ').lower()
 
-    guess = input('Who has more followers? Type \'A\' or \'B\': ')
-
-    if guess == 'A':
-        if pick_one['follower_count'] > pick_two['follower_count']:
-            player_score = player_wins(player_score)
-        else:
-            game_over(player_score)
-    elif guess == 'B':
-        if pick_one['follower_count'] < pick_two['follower_count']:
-            player_score = player_wins(player_score)
-        else:
-            game_over(player_score)
-
+    player_score = compare_picks(guess, pick_one, pick_two, player_score)    
