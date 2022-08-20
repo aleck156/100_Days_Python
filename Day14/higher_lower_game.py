@@ -1,3 +1,4 @@
+import os
 import random
 import sys
 from art import logo, vs
@@ -7,15 +8,10 @@ def game_over(player_score):
     print(f'You\'re wrong! Your final score is {player_score}.')
     sys.exit()
 
-def player_wins(player_score):
-    player_score +=1
-    print(f'You\'re right! Current score: {player_score}')
-    return player_score
-
 def pick_random(data, data_len):
-    pick_one = data[random.randint(0,data_len)]
-    pick_two = data[random.randint(0,data_len)]
-    return pick_one, pick_two
+    pick_a = data[random.randint(0,data_len)]
+    pick_b = data[random.randint(0,data_len)]
+    return pick_a, pick_b
 
 def display_choices(pick_a, pick_b):
     print(f'Compare A: {pick_a["name"]}, {pick_a["description"]}, from {pick_a["country"]}')
@@ -25,12 +21,12 @@ def display_choices(pick_a, pick_b):
 def compare_picks(guess, pick_a, pick_b, player_score):
     if guess == 'a':
         if pick_a['follower_count'] > pick_b['follower_count']:
-            return player_wins(player_score)
+            return player_score +1
         else:
             game_over(player_score)
     elif guess == 'b':
         if pick_a['follower_count'] < pick_b['follower_count']:
-            return player_wins(player_score)
+            return player_score + 1
         else:
             game_over(player_score)
 
@@ -38,9 +34,11 @@ def compare_picks(guess, pick_a, pick_b, player_score):
 player_score = 0
 data_len = len(data)
 
-print(logo)
 
 while True:
+    os.system('clear')
+    print(logo)
+    print(f'You\'re right! Current score: {player_score}')
     pick_one, pick_two = pick_random(data, data_len)
 
     display_choices(pick_one, pick_two)
