@@ -7,7 +7,7 @@ from menu import MENU, resources
 
 
 def print_resources(res):
-    print(f'Resource left:')
+    print(f'Resources left:')
     for elem in res:
         print(f'{elem:8s}{res[elem]}')
 
@@ -55,6 +55,7 @@ def update_resources(resource, ingredients):
             return False
     for key in ingredients:
         resource[key] -= ingredients[key]
+    return True
 
 
 def make_coffee(coffee_type, resource, price):
@@ -68,13 +69,14 @@ def make_coffee(coffee_type, resource, price):
     Returns:
 
     """
-    if not update_resources(resource, coffee_type['ingredients']):
+    if update_resources(resource, coffee_type['ingredients']):
         while not charge_money(coffee_type['cost']):
             pass
         price += coffee_type['cost']
         print(f'Your coffee is completed! Thanks!')
         print(coffee_type)
         print_resources(resources)
+        return price
 
 loop_status = True
 user_choice = ''
@@ -84,14 +86,15 @@ budget = 0.00
 while loop_status:
     user_choice = input('What would you like? [espresso/latte/cappuccino/report/q]: ').lower()[:1]
     if user_choice == 'r':
+        print(budget)
         print_resources(resources)
         print(f'Thank you for visiting our coffee shop! Have a nice day!')
     elif user_choice == 'e':
-        make_coffee(MENU['espresso'], resources, budget)
+        budget = make_coffee(MENU['espresso'], resources, budget)
     elif user_choice == 'l':
-        make_coffee(MENU['latte'], resources, budget)
+        budget = make_coffee(MENU['latte'], resources, budget)
     elif user_choice == 'c':
-        make_coffee(MENU['latte'], resources, budget)
+        budget = make_coffee(MENU['latte'], resources, budget)
     else:
         print(f'See you next time!')
         loop_status = False
