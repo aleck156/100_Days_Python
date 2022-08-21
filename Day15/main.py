@@ -11,6 +11,14 @@ def print_resources(res):
     for elem in res:
         print(f'{elem:8s}{res[elem]}')
 
+def process_money():
+    print(f'Please insert coins [quarters/dimes/nickles/pennies]')
+    quarters = int(input('How many quarters: '))
+    dimes = int(input('How many dimes: '))
+    nickles = int(input('How many nickles: '))
+    pennies = int(input('How many pennies: '))
+    return quarters * 0.25 + dimes * 0.1 + nickles * 0.05 + pennies * 0.01
+
 def charge_money(coffee_cost):
     """
     Charge user money for the coffee
@@ -21,12 +29,7 @@ def charge_money(coffee_cost):
         True - once all the price is paid
         False - when the inserted coins are not enough
     """
-    print(f'Please insert coins [quarters/dimes/nickles/pennies]')
-    quarters = int(input('How many quarters: '))
-    dimes = int(input('How many dimes: '))
-    nickles = int(input('How many nickles: '))
-    pennies = int(input('How many pennies: '))
-    income = quarters * 0.25 + dimes * 0.1 + nickles * 0.05 + pennies * 0.01
+    income = process_money()
     if income > coffee_cost:
         print(f'Here\'s your ${(income - coffee_cost):.2f} charge')
         return True
