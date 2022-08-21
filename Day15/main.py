@@ -5,14 +5,11 @@
 
 from menu import MENU, resources
 
-budget = 0.00
 
 def print_resources(res):
     print(f'Resource left:')
     for elem in res:
         print(f'{elem:8s}{res[elem]}')
-
-# print_resources(resources)
 
 def charge_money(coffee_cost):
     """
@@ -81,6 +78,9 @@ def make_coffee(coffee_type, resource, price):
 
 loop_status = True
 user_choice = ''
+budget = 0.00
+
+
 while loop_status:
     user_choice = input('What would you like? [espresso/latte/cappuccino/report/q]: ').lower()[:1]
     if user_choice == 'r':
@@ -95,15 +95,3 @@ while loop_status:
     else:
         print(f'See you next time!')
         loop_status = False
-
-# check whether resources are sufficient for the order a user wants to drink
-    # def check_resources(ingredients, resources)
-# get the money - pick coins - pennies, nickels, dimes, quarters
-    # cost - does the entered amount equals to price?
-
-# do you want to make a coffee?
-    # select your coffee
-    # verify resources
-    #    yes -> make it -> charge for it -> go back to the main loop
-    #    no -> go back to the main loop
-# start making the coffee only after the payment is done
