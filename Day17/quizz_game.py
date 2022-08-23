@@ -12,7 +12,7 @@ while answer:
         print(question.text)
         user_choice = input(f'True or False? [true/false]: ').lower()[:1]
         if user_choice == question.answer.lower()[:1]:
-            brain.score += 1
+            brain.player_score_increase()
             print(f'You current score is {brain.score}')
         else:
             answer = False

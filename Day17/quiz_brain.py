@@ -28,3 +28,6 @@ class QuizzBrain:
     def player_score(self):
         return self.score
 
+    def player_score_increase(self):
+        self.score += 1
+
