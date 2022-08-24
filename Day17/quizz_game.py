@@ -1,9 +1,10 @@
 
 from data import question_data
+from data_cs import question_data_cs
 
 from quiz_brain import QuizzBrain
 
-brain = QuizzBrain(question_data)
+brain = QuizzBrain(question_data_cs)
 
 answer = True
 while answer:
