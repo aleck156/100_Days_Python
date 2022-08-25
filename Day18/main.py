@@ -22,6 +22,7 @@ for _ in range(1,100):
     color = random_color_tuple()
     direction = random_direction()
     timmy.pencolor(color)
+    timmy.pensize(15)
     timmy.left(90*direction)
     timmy.forward(30)
 
