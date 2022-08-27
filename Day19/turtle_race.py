@@ -1,5 +1,7 @@
 from turtle import Turtle as t, Screen as s
 import random
+from functools import partial
+
 
 timmy = t()
 sc = s()
@@ -12,13 +14,13 @@ def random_color():
 
 def init_game(turtle, screen, width, height):
     turtle.shape('turtle')
-    user_pick = int(screen.numinput(title="Turtle Race",prompt='Which turtle will win? [1-6]: '))
     screen.colormode(255)
     screen.setup(width=width, height=height)
+    user_pick = int(screen.numinput(title="Turtle Race",prompt='Which turtle will win? [1-6]: '))
     return user_pick
 
 def setup_turtles(width, height):
-    turtle_race = []
+    turtles = []
     for index in range(0,6):
         new_turtle = t()
         new_turtle.shape('turtle')
@@ -26,13 +28,25 @@ def setup_turtles(width, height):
         new_turtle.penup()
         new_turtle.goto(- width /2 + 10 , -height / 4 + height * 0.1 * index)
         new_turtle.pendown()
-        turtle_race.append(new_turtle)
-    return turtle_race
+        turtles.append(new_turtle)
+    return turtles
 
+def detect_finish(turtles, screen):
+    for index, turtle in enumerate(turtles):
+        if turtle.xcor() >= screen.screensize()[0] - 25:
+            return True
+    return False
+
+def start_race(turtles, screen):
+    # detect_finish(turtles, screen)
+    while not detect_finish(turtles, screen):
+        for turtle in turtles:
+            turtle.forward(random.randint(0, 25))
 
 user_bet = init_game(timmy, sc, sc_w, sc_h)
-setup_turtles(sc_w, sc_h)
-
+turtles = setup_turtles(sc_w, sc_h)
+sc.listen()
+sc.onkey(partial(start_race, turtles, sc), 'space')
 
 
 sc.exitonclick()
