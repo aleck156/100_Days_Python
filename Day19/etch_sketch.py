@@ -3,6 +3,10 @@ from turtle import Turtle as t, Screen as s
 from functools import partial
 
 timmy = t()
+timmy.pensize(10)
+timmy.shapesize(stretch_wid=2.5, stretch_len=2.5, outline=None)
+
+
 screen = s()
 screen.colormode(255)
 
