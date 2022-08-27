@@ -26,12 +26,19 @@ def change_color(turtle, sc):
     print('Changing color')
     turtle.pencolor((random.randint(0,255), random.randint(0,255), random.randint(0,255)))
 
+def clear_screen(turtle):
+    turtle.clear()
+    turtle.penup()
+    turtle.home()
+    turtle.pendown()
+
 screen.listen()
 screen.onkey(partial(move_forward, timmy), 'Up')
 screen.onkey(partial(move_backward, timmy), 'Down')
 screen.onkey(partial(turn_left, timmy), 'Left')
 screen.onkey(partial(turn_right, timmy), 'Right')
 screen.onkey(partial(change_color, timmy, screen), 'space')
+screen.onkey(partial(clear_screen, timmy), 'Escape')
 
 
 screen.exitonclick()
