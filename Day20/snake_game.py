@@ -1,22 +1,17 @@
 import time
 from turtle import Turtle, Screen
-import random
-from functools import partial
+from Snake import Snake
+from Food import Food
+from Scoreboard import Scoreboard
 
-score = 0
 speed = 0.1
 screen = Screen()
 
 snake = []
 
 screen.tracer(0)
-for index in range(0, 3):
-    new_snake_part = Turtle(shape='square')
-    new_snake_part.penup()
-    new_snake_part.goto(index * (-20), 0)
-    new_snake_part.color('white')
-    snake.append(new_snake_part)
 
+snake = Snake(3)
 screen.update()
 
 screen.setup(width=1600, height=1200)
