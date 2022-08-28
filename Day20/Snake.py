@@ -1,6 +1,7 @@
 import time
 from turtle import Turtle
 
+MOVE_DISTANCE = 20
 class Snake:
     def __init__(self, size):
         self.snake = []
@@ -19,7 +20,7 @@ class Snake:
             new_x = self.snake[seg_num - 1].xcor()
             new_y = self.snake[seg_num - 1].ycor()
             self.snake[seg_num].goto(new_x, new_y)
-        self.snake[0].forward(20)
+        self.snake[0].forward(MOVE_DISTANCE)
 
     def __len__(self):
         return len(self.snake)
