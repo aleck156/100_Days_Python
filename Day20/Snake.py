@@ -7,6 +7,8 @@ class Snake:
         self.snake = []
         self.create_snake(size)
 
+    def __len__(self):
+        return len(self.snake)
     def create_snake(self, size):
         for index in range(0, size):
             new_snake_part = Turtle(shape='square')
@@ -22,6 +24,18 @@ class Snake:
             self.snake[seg_num].goto(new_x, new_y)
         self.snake[0].forward(MOVE_DISTANCE)
 
-    def __len__(self):
-        return len(self.snake)
+    def Up(self):
+        pass
+
+    def Down(self):
+        pass
+
+    def Left(self):
+        pass
+
+    def Right(self):
+        pass
+
+
+
 

@@ -10,7 +10,7 @@ screen = Screen()
 snake = Snake(3)
 
 screen.tracer(0)
-screen.update()
+# screen.update()
 
 screen.setup(width=1600, height=1200)
 screen.title('Welcome to the SNAKE GAME')
@@ -23,10 +23,12 @@ for _ in range(0, 10):
     time.sleep(1 / speed)
     screen.update()
 
-
-
 screen.listen()
-# screen.onkey(partial(move_snake,snake), 'space')
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Dowh")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
 
 screen.exitonclick()
 
