@@ -39,7 +39,7 @@ def start_race(turtles, screen, user_bet):
     # detect_finish(turtles, screen)
     while not detect_finish(turtles, screen):
         for turtle in turtles:
-            turtle.forward(random.randint(0, 25))
+            turtle.forward(random.randint(0, 50))
     winner = detect_finish(turtles, screen) + 1
     print(f'The winner is turtle {winner}')
     print(f'Your bet was turtle {user_bet}')
