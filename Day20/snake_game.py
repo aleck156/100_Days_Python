@@ -17,18 +17,18 @@ screen.title('Welcome to the SNAKE GAME')
 screen.bgcolor('black')
 screen.colormode(255)
 
-for _ in range(0, 10):
-    screen.delay(5)
-    snake.move(screen, speed)
-    time.sleep(1 / speed)
-    screen.update()
-
 screen.listen()
 screen.onkey(snake.up, "Up")
-screen.onkey(snake.down, "Dowh")
+screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 
-screen.exitonclick()
 
+while True:
+    screen.update()
+    time.sleep(0.1)
+
+    snake.move()
+
+screen.exitonclick()
