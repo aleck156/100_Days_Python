@@ -4,14 +4,12 @@ from Snake import Snake
 from Food import Food
 from Scoreboard import Scoreboard
 
-speed = 0.1
+speed = 10
 screen = Screen()
 
-snake = []
+snake = Snake(3)
 
 screen.tracer(0)
-
-snake = Snake(3)
 screen.update()
 
 screen.setup(width=1600, height=1200)
@@ -19,9 +17,7 @@ screen.title('Welcome to the SNAKE GAME')
 screen.bgcolor('black')
 screen.colormode(255)
 
-def move_snake(snake):
-    for piece in snake:
-        piece.forward(20)
+snake.move(screen, speed)
 
 
 
