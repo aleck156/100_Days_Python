@@ -15,15 +15,12 @@ class Snake:
             self.snake.append(new_snake_part)
 
     def move(self, screen, speed):
-        for _ in range(0, 10):
-            screen.delay(5)
-            for seg_num in range(len(self.snake) - 1, 0, -1):
-                new_x = self.snake[seg_num - 1].xcor()
-                new_y = self.snake[seg_num - 1].ycor()
-                self.snake[seg_num].goto(new_x, new_y)
-            self.snake[0].forward(20)
-            time.sleep(1/speed)
-            screen.update()
+        for seg_num in range(len(self.snake) - 1, 0, -1):
+            new_x = self.snake[seg_num - 1].xcor()
+            new_y = self.snake[seg_num - 1].ycor()
+            self.snake[seg_num].goto(new_x, new_y)
+        self.snake[0].forward(20)
 
     def __len__(self):
         return len(self.snake)
+
