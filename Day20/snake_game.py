@@ -1,6 +1,7 @@
 import time
 from turtle import Turtle, Screen
 
+from Day20.Scoreboard import Scoreboard
 from Food import Food
 from Snake import Snake
 
@@ -12,6 +13,7 @@ screen = Screen()
 
 snake = Snake(3)
 food = Food()
+scoreboard = Scoreboard()
 
 screen.tracer(0)
 # screen.update()
@@ -26,6 +28,7 @@ screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
+screen.onkey(screen.bye, 'space')
 
 
 
@@ -36,5 +39,6 @@ while True:
 
     if snake.head.distance(food) < 25:
         food.refresh()
+        scoreboard.add_point()
 
 screen.exitonclick()
