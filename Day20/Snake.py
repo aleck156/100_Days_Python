@@ -12,11 +12,19 @@ class Snake:
         return len(self.snake)
     def create_snake(self, size):
         for index in range(0, size):
-            new_snake_part = Turtle(shape='square')
-            new_snake_part.penup()
-            new_snake_part.goto(index * (-20), 0)
-            new_snake_part.color('white')
-            self.snake.append(new_snake_part)
+            self.add_snake_part(index)
+
+
+    def add_snake_part(self, position):
+        print(position)
+        new_snake_part = Turtle(shape='square')
+        new_snake_part.penup()
+        new_snake_part.goto(position * (-20), position * 0)
+        new_snake_part.color('white')
+        self.snake.append(new_snake_part)
+
+    def extend(self):
+        self.add_snake_part(self.snake[-1].xcor())
 
     def move(self):
         for seg_num in range(len(self.snake) - 1, 0, -1):
