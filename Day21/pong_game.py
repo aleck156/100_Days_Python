@@ -12,7 +12,7 @@ screen.title('Ping-Pong game')
 
 paddle = Paddle(-SCREEN_WIDTH/2 + 40 , 40)
 
-# screen.tracer(0)
+screen.tracer(0)
 
 screen.listen()
 screen.onkey(screen.bye, 'space')
@@ -21,7 +21,7 @@ screen.onkey(paddle.move_down, 'Down')
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(0.001)
     screen.update()
 
 
