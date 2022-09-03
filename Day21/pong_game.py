@@ -10,14 +10,17 @@ screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 screen.bgcolor('black')
 screen.title('Ping-Pong game')
 
-paddle = Paddle(-SCREEN_WIDTH/2 + 40 , 40)
+l_paddle = Paddle(-SCREEN_WIDTH/2 + 40 , 40)
+r_paddle = Paddle(SCREEN_WIDTH/2 - 40 , 40)
 
 screen.tracer(0)
 
 screen.listen()
 screen.onkey(screen.bye, 'space')
-screen.onkey(paddle.move_up, 'Up')
-screen.onkey(paddle.move_down, 'Down')
+screen.onkey(l_paddle.move_up, 'Up')
+screen.onkey(l_paddle.move_down, 'Down')
+screen.onkey(r_paddle.move_up, 'w')
+screen.onkey(r_paddle.move_down, 's')
 
 game_is_on = True
 while game_is_on:
