@@ -16,7 +16,6 @@ class Snake:
 
 
     def add_snake_part(self, position):
-        print(position)
         new_snake_part = Turtle(shape='square')
         new_snake_part.penup()
         new_snake_part.goto(position * (-20), position * 0)
