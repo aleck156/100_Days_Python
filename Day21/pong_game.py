@@ -2,6 +2,7 @@ import time
 from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -13,10 +14,10 @@ screen.title('Ping-Pong game')
 
 l_paddle = Paddle(-SCREEN_WIDTH/2 + 40, 40)
 r_paddle = Paddle(SCREEN_WIDTH/2 - 40, 40)
-player1_score = 0
-player2_score = 0
 
 ball = Ball()
+
+scoreboard = Scoreboard(SCREEN_WIDTH, SCREEN_HEIGHT)
 
 screen.tracer(0)
 
