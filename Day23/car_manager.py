@@ -27,9 +27,18 @@ class CarManager(Turtle):
         for car in self.cars:
             car.forward(STARTING_MOVE_DISTANCE)
 
+    def stop_all_cars(self):
+        for car in self.cars:
+            car.forward(0)
+
     def remove_unseen_cars(self):
         for car in self.cars:
             if car.xcor() < -300:
                 car.hideturtle()
                 self.cars.remove(car)
                 self.cars.append(self.new_car(300, random.randint(0,500) - 250))
+
+    def collision_detection(self, turtle):
+        for car in self.cars:
+            if car.distance(turtle.pos()) < 30:
+                return True
