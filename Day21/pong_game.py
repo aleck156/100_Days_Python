@@ -36,16 +36,16 @@ while game_is_on:
     if ball.ycor() > SCREEN_HEIGHT / 2 - 20 or ball.ycor() < -SCREEN_HEIGHT / 2 + 20:
         ball.bounce_y()
 
-    if ball.xcor() > SCREEN_HEIGHT / 2 - 50 and ball.distance(r_paddle.pos()) < 40:
+    if ball.xcor() > SCREEN_HEIGHT / 2 - 20 and ball.distance(r_paddle.pos()) < 50:
         ball.bounce_x()
 
-    if ball.xcor() < -SCREEN_HEIGHT / 2 + 50 and ball.distance(l_paddle.pos()) < 40:
+    if ball.xcor() < -SCREEN_HEIGHT / 2 + 20 and ball.distance(l_paddle.pos()) < 50:
         ball.bounce_x()
 
-    if ball.xcor() > SCREEN_HEIGHT / 2 + 30:
+    if ball.xcor() > SCREEN_WIDTH / 2:
         ball.reset_position()
 
-    if ball.xcor() < -SCREEN_HEIGHT / 2 - 30:
+    if ball.xcor() < -SCREEN_WIDTH / 2:
         ball.reset_position()
 
     # if ball.xcor() > SCREEN_HEIGHT / 2 - 50 or ball.xcor() < -SCREEN_HEIGHT / 2 + 50:
