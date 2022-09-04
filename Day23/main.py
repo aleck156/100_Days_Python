@@ -23,6 +23,7 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     if car_manager.collision_detection(player):
+        game_is_on = False
         car_manager.stop_all_cars()
         scoreboard.game_over()
         screen.onkey(None, 'Up')
@@ -34,3 +35,5 @@ while game_is_on:
     if player.ycor() > 280:
         scoreboard.update_score()
         player.restart_position()
+
+screen.exitonclick()
