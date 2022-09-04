@@ -45,9 +45,11 @@ while game_is_on:
 
     if ball.xcor() > SCREEN_WIDTH / 2:
         ball.reset_position()
+        scoreboard.l_point()
 
     if ball.xcor() < -SCREEN_WIDTH / 2:
         ball.reset_position()
+        scoreboard.r_point()
 
     # if ball.xcor() > SCREEN_HEIGHT / 2 - 50 or ball.xcor() < -SCREEN_HEIGHT / 2 + 50:
     #     if ball.distance(r_paddle.pos()) > 40 and ball.distance(l_paddle.pos()) > 40:

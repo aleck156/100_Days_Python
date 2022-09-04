@@ -13,3 +13,9 @@ class Scoreboard(Turtle):
 
         self.goto(screen_x / 2 - 30, screen_y * 0.4)
         self.write(self.r_score, align='center', font=('Courier', int(screen_y / 15), 'normal'))
+
+    def l_point(self):
+        self.l_score += 1
+
+    def r_point(self):
+        self.r_score += 1
