@@ -25,10 +25,11 @@ while game_is_on:
     if car_manager.collision_detection(player):
         car_manager.stop_all_cars()
         scoreboard.game_over()
+        screen.onkey(None, 'Up')
+
     else:
         car_manager.move_all_cars()
         car_manager.remove_unseen_cars()
-
 
     if player.ycor() > 280:
         scoreboard.update_score()
