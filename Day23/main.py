@@ -32,8 +32,8 @@ while game_is_on:
         car_manager.move_all_cars()
         car_manager.remove_unseen_cars()
 
-    if player.ycor() > 280:
-        scoreboard.update_score()
+    if player.at_finish_line():
         player.restart_position()
+        scoreboard.update_score()
 
 screen.exitonclick()
