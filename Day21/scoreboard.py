@@ -8,14 +8,21 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.l_score = 0
         self.r_score = 0
-        self.goto(-screen_x / 2 + 30, screen_y * 0.4)
-        self.write(self.l_score, align='center', font=('Courier', int(screen_y / 15), 'normal'))
+        self.screen_x = screen_x
+        self.screen_y = screen_y
+        self.display_scores()
 
-        self.goto(screen_x / 2 - 30, screen_y * 0.4)
-        self.write(self.r_score, align='center', font=('Courier', int(screen_y / 15), 'normal'))
+    def display_scores(self):
+        self.clear()
+        self.goto(-self.screen_x / 2 + 30, self.screen_y * 0.4)
+        self.write(self.l_score, align='center', font=('Courier', int(self.screen_y / 15), 'normal'))
 
+        self.goto(self.screen_x / 2 - 30, self.screen_y * 0.4)
+        self.write(self.r_score, align='center', font=('Courier', int(self.screen_y / 15), 'normal'))
     def l_point(self):
         self.l_score += 1
+        self.display_scores()
 
     def r_point(self):
         self.r_score += 1
+        self.display_scores()
