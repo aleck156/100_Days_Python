@@ -22,6 +22,8 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+    car_manager.move_all_cars()
+    car_manager.remove_unseen_cars()
 
     if player.ycor() > 280:
         scoreboard.update_score()
