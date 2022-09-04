@@ -40,5 +40,5 @@ class CarManager(Turtle):
 
     def collision_detection(self, turtle):
         for car in self.cars:
-            if car.distance(turtle.pos()) < 30:
+            if car.xcor() < 30 and car.xcor() > 0 and car.ycor() > turtle.ycor() - 10 and car.ycor() < turtle.ycor() + 10:
                 return True
