@@ -13,6 +13,9 @@ screen.title('Ping-Pong game')
 
 l_paddle = Paddle(-SCREEN_WIDTH/2 + 40, 40)
 r_paddle = Paddle(SCREEN_WIDTH/2 - 40, 40)
+player1_score = 0
+player2_score = 0
+
 ball = Ball()
 
 screen.tracer(0)
@@ -38,6 +41,16 @@ while game_is_on:
 
     if ball.xcor() < -SCREEN_HEIGHT / 2 + 50 and ball.distance(l_paddle.pos()) < 40:
         ball.bounce_x()
+
+    if ball.xcor() > SCREEN_HEIGHT / 2 + 30:
+        ball.reset_position()
+
+    if ball.xcor() < -SCREEN_HEIGHT / 2 - 30:
+        ball.reset_position()
+
+    # if ball.xcor() > SCREEN_HEIGHT / 2 - 50 or ball.xcor() < -SCREEN_HEIGHT / 2 + 50:
+    #     if ball.distance(r_paddle.pos()) > 40 and ball.distance(l_paddle.pos()) > 40:
+    #         print('GAME OVER')
 
 
 # screen.onkey(screen.exitonclick, 'space')
