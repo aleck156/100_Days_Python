@@ -10,8 +10,6 @@
 with open('./Input/Letters/starting_letter.txt') as starting_letter:
     letter_template = starting_letter.read()
 
-# print(letter_template)
-
 with open('./Input/Names/invited_names.txt') as names:
     names = names.read().split('\n')
     for name in names:
