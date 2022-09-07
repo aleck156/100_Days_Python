@@ -12,6 +12,7 @@ screen.setup(width=725, height=491)
 states_coord = pandas.read_csv('50_states.csv')
 states_coord_len = len(states_coord)
 score = 0
+guessed_states = []
 
 game_is_on = True
 while score < states_coord_len and game_is_on:
@@ -22,6 +23,7 @@ while score < states_coord_len and game_is_on:
     ).title()
     if answer_state.lower() in ['q', 'quit', 'e', 'exit']:
         game_is_on = False
+        missed_states = [state for state in states_coord.state if not states_coord.state.empty]
     else:
         position = states_coord[states_coord.state == answer_state]
         if not position.empty:
@@ -31,6 +33,9 @@ while score < states_coord_len and game_is_on:
             new_turtle.write(f'{answer_state}',align='center', font=('Arial', 10, 'normal'))
             new_turtle.hideturtle()
             score += 1
+            guessed_states.append(position.state)
         else:
             print(f'There\'s no such state like {answer_state}')
 
+print(guessed_states)
+print(missed_states)
