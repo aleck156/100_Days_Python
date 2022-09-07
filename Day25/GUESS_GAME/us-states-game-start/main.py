@@ -20,7 +20,7 @@ while score < states_coord_len and game_is_on:
         title=f'{score}/{states_coord_len} Guess the State',
         prompt="What's another state's name"
     ).title()
-    if answer_state in ['q', 'quit', 'e', 'exit']:
+    if answer_state.lower() in ['q', 'quit', 'e', 'exit']:
         game_is_on = False
     else:
         position = states_coord[states_coord.state == answer_state]
