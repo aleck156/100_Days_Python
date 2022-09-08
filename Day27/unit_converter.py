@@ -1,7 +1,7 @@
 from tkinter import *
 
 window = Tk()
-window.title('Miles to km/h converter')
+window.title('Miles to km converter')
 window.minsize(width=100, height=200)
 window.config(padx=20, pady=20)
 
