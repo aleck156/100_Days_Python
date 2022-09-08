@@ -6,8 +6,9 @@ window.minsize(width=100, height=200)
 window.config(padx=20, pady=20)
 
 def convert_unit():
-    user_value = float(input_field.get())
-    label3.config(text=f'{user_value * 1.609344:.2f}')
+    user_string = input_field.get()
+    user_value = f'{float(user_string) * 1.609344:.2f}' if user_string else 0.0
+    label3.config(text=f'{user_value}')
     label3.grid(column=1, row=1)
 
 # row 1
@@ -22,7 +23,7 @@ label1.grid(column=2, row=0)
 label2 = Label(text='is equal to')
 label2.grid(column=0, row=1)
 
-label3 = Label(text='0')
+label3 = Label(text='0.0')
 label3.grid(column=1, row=1)
 
 label4 = Label(text='km')
