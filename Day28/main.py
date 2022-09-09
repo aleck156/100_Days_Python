@@ -1,7 +1,5 @@
 from tkinter import *
-
-
-
+import math
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -13,25 +11,40 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 
 TICK_SYMBOL = '✔'
-TICK_COUNT = 7
+TICK_COUNT = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+def start_timer():
+    global TICK_COUNT
+    count_down(WORK_MIN * 60-50)
 
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+def count_down(count):
+    if count >= 0:
+        minutes = math.floor(count / 60)
+        seconds = count % 60
+        canvas.itemconfig(timer_text,{'text': f'{minutes}:{seconds:02d}'})
+        window.after(1000, count_down, count - 1)
+    else:
+        print('break!')
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
 window.title('Pomodoro App!')
 window.config(padx=10, pady=10, bg=YELLOW)
 
-canvas = Canvas(width=350, height=350, bg=YELLOW, highlightthickness=0)
+# window.after(1000, count_down, WORK_MIN * 60)
+
+canvas = Canvas(width=350, height=300, bg=YELLOW, highlightthickness=0)
 image = PhotoImage(file='./tomato.png')
-canvas.create_image(175, 175, image=image)
-canvas.create_text(175, 200, text='25:00', font=(FONT_NAME, 20, 'bold'), fill='white')
+canvas.create_image(175, 150, image=image)
+timer_text = canvas.create_text(175, 175, text='25:00', font=(FONT_NAME, 20, 'bold'), fill='white')
 canvas.grid(column=0, row=1, columnspan=3)
+
+
 
 # create 1 text display on top
 top_label = Label()
@@ -42,7 +55,7 @@ top_label.grid(column=0, row=0, columnspan=3)
 # create 2 buttons - start, stop
 # add 2 methods
 button_left = Button()
-button_left.config(text='Start', font=(FONT_NAME, 15, 'bold'), bg=YELLOW)
+button_left.config(text='Start', font=(FONT_NAME, 15, 'bold'), bg=YELLOW, highlightthickness=0, command=start_timer)
 button_left.grid(column=0, row=2)
 
 button_right = Button()
@@ -52,7 +65,7 @@ button_right.grid(column=2, row=2)
 # bottom tick
 text = Label()
 current_ticks = ''.join([TICK_SYMBOL for _ in range(0, TICK_COUNT)])
-text.config(text=current_ticks, font=(FONT_NAME, 12, 'bold'), bg=YELLOW)
+text.config(text=current_ticks, font=(FONT_NAME, 25, 'bold'), bg=YELLOW, fg=GREEN)
 text.grid(column=1, row=3)
 
 
