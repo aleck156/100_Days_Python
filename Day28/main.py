@@ -1,3 +1,6 @@
+from tkinter import *
+
+
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -16,3 +19,12 @@ LONG_BREAK_MIN = 20
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # ---------------------------- UI SETUP ------------------------------- #
+
+window = Tk()
+window.title('Pomodoro App!')
+window.minsize(width=400, height=600)
+window.config(padx=10, pady=10)
+window.grid()
+
+
+window.mainloop()
