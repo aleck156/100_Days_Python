@@ -26,7 +26,7 @@ def start_timer():
         count_down(long_break_sec)
     elif TICK_COUNT % 2 == 0:
         count_down(work_sec)
-    elif not TICK_COUNT % 2 == 0:
+    elif TICK_COUNT % 2 != 0:
         count_down(short_break_sec)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -40,6 +40,7 @@ def count_down(count):
     else:
         print('break!')
         TICK_COUNT += 1
+        start_timer()
 
 # ---------------------------- UI SETUP ------------------------------- #
 
