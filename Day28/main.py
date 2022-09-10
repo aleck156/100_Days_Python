@@ -11,7 +11,7 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 
 TICK_SYMBOL = '✔'
-TICK_COUNT = 0
+TICK_COUNT = 1
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
@@ -19,10 +19,19 @@ TICK_COUNT = 0
 
 def start_timer():
     global TICK_COUNT
-    count_down(WORK_MIN * 60-50)
+    work_sec = WORK_MIN * 60
+    short_break_sec = SHORT_BREAK_MIN * 60
+    long_break_sec = LONG_BREAK_MIN * 60
+    if TICK_COUNT % 8 == 0:
+        count_down(long_break_sec)
+    elif TICK_COUNT % 2 == 0:
+        count_down(work_sec)
+    elif not TICK_COUNT % 2 == 0:
+        count_down(short_break_sec)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
+    global TICK_COUNT
     if count >= 0:
         minutes = math.floor(count / 60)
         seconds = count % 60
@@ -30,6 +39,8 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         print('break!')
+        TICK_COUNT += 1
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
