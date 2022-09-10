@@ -48,6 +48,9 @@ def count_down(count):
     else:
         print('break!')
         TICK_COUNT += 1
+        current_ticks = ''.join([TICK_SYMBOL for _ in range(0, math.floor(TICK_COUNT / 2))])
+        text.config(text=current_ticks, font=(FONT_NAME, 25, 'bold'), bg=YELLOW, fg=GREEN)
+        text.grid(column=1, row=3)
         start_timer()
 
 # ---------------------------- UI SETUP ------------------------------- #
