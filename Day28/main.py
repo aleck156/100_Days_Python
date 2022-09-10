@@ -9,11 +9,23 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+TIMER = None
 
 TICK_SYMBOL = '✔'
 TICK_COUNT = 1
 
 # ---------------------------- TIMER RESET ------------------------------- # 
+def reset_timer():
+    global TICK_COUNT
+    window.after_cancel(TIMER)
+    canvas.itemconfig(timer_text, text='00:00')
+    top_label.config(text='TIMER', font=(FONT_NAME, 20, 'bold'), bg=YELLOW, fg=GREEN)
+    top_label.grid(column=0, row=0, columnspan=3)
+
+    TICK_COUNT = 1
+    current_ticks = ''.join([TICK_SYMBOL for _ in range(0, math.floor(TICK_COUNT / 2))])
+    text.config(text=current_ticks, font=(FONT_NAME, 25, 'bold'), bg=YELLOW, fg=GREEN)
+    text.grid(column=1, row=3)
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
@@ -39,12 +51,12 @@ def change_label(text, color):
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    global TICK_COUNT
+    global TICK_COUNT, TIMER
     if count >= 0:
         minutes = math.floor(count / 60)
         seconds = count % 60
         canvas.itemconfig(timer_text,{'text': f'{minutes}:{seconds:02d}'})
-        window.after(1000, count_down, count - 1)
+        TIMER = window.after(1000, count_down, count - 1)
     else:
         print('break!')
         TICK_COUNT += 1
@@ -69,7 +81,7 @@ canvas.grid(column=0, row=1, columnspan=3)
 
 # create 1 text display on top
 top_label = Label()
-top_label.config(text='TIMER', font=(FONT_NAME, 20, 'bold'), bg=YELLOW)
+top_label.config(text='TIMER', font=(FONT_NAME, 20, 'bold'), bg=YELLOW, fg=GREEN)
 top_label.grid(column=0, row=0, columnspan=3)
 
 # buttons - start, stop
@@ -78,7 +90,7 @@ button_left.config(text='Start', font=(FONT_NAME, 15, 'bold'), bg=YELLOW, highli
 button_left.grid(column=0, row=2)
 
 button_right = Button()
-button_right.config(text='Stop', font=(FONT_NAME, 15, 'bold'), bg=YELLOW)
+button_right.config(text='Stop', font=(FONT_NAME, 15, 'bold'), bg=YELLOW, command=reset_timer)
 button_right.grid(column=2, row=2)
 
 # bottom tick
