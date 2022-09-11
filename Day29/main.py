@@ -10,6 +10,9 @@ def save_data():
     password = password_value.get()
     print(f'{url} / {email} / {password}')
 
+    with open('./user_data.txt', mode='a') as file:
+        file.write(f'{url} | {email} | {password}\n')
+
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title('Password Manager')
