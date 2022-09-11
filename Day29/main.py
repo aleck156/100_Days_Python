@@ -10,6 +10,10 @@ def save_data():
     email = email_address.get()
     password = password_value.get()
 
+    if len(url) == 0 or len(email)==0 or len(password)==0:
+        messagebox.showinfo(title='Missing fields',message='You\'ve left some fields empty!')
+        return
+
     user_response = messagebox.askokcancel(
         title=url,
         message=f'These are the details entered:\nEmail: {email}\nPassword:{password}\nIs it ok to save?'
