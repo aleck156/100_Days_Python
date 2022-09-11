@@ -16,6 +16,8 @@ def save_data():
     website_URL.delete(0, 'end')
     email_address.delete(0, 'end')
     password_value.delete(0, 'end')
+    website_URL.focus()
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
