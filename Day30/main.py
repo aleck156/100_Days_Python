@@ -13,3 +13,4 @@ else:
 finally:
     file.close()
     print('file was closed')
+    raise KeyError('Hello, darkness!')
