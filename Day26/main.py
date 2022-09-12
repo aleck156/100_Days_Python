@@ -32,5 +32,17 @@ user_text = input('Enter your text here: ').upper()
 # for letter in user_text:
 #     print(f'{letter} - {NATO_dict[letter]}')
 
+def get_letters(letters):
+    try:
+        [NATO_dict[letter] for letter in user_text]
+    except KeyError:
+        print('Sorry, only letters in the alphabet please.')
+        return False
+    else:
+        return True
+
+while not get_letters(user_text):
+    user_text = input('Enter your text here: ').upper()
+
 user_text_list = [NATO_dict[letter] for letter in user_text]
 print(user_text_list)
