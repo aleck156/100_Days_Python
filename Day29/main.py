@@ -1,3 +1,4 @@
+import json
 from tkinter import *
 from tkinter import messagebox
 from random import choice, randint, shuffle
@@ -32,12 +33,18 @@ def save_data():
     email = email_address.get()
     password = password_value.get()
 
+    new_data = {url: {
+        'email': email,
+        'Password': password
+        }
+    }
+
     if len(url) == 0 or len(email)==0 or len(password)==0:
         messagebox.showinfo(title='Missing fields',message='You\'ve left some fields empty!')
         return
 
-    with open('./user_data.txt', mode='a') as file:
-        file.write(f'{url} | {email} | {password}\n')
+    with open('./user_data.json', mode='w') as file:
+        json.dump(f'{url} | {email} | {password}\n')
 
     website_URL.delete(0, 'end')
     email_address.delete(0, 'end')
