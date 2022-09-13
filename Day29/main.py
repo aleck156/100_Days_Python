@@ -24,7 +24,7 @@ def create_password():
     if password_value.get():
         password_value.delete(0, 'end')
     password_value.insert(0, password)
-    pyperclip.copy(password)
+    # pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
