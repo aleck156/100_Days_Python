@@ -76,10 +76,14 @@ website_label = Label()
 website_label.config(text='Website:', justify='center', bg='BLACK', fg='GRAY')
 website_label.grid(column=0, row=1)
 
-website_URL = Entry(width=55)
+website_URL = Entry(width=30)
 website_URL.config()
 website_URL.focus()
-website_URL.grid(column=1, columnspan=2, row=1, sticky='w')
+website_URL.grid(column=1, row=1, sticky='w')
+
+search_button = Button(width=20)
+search_button.config(text='Search')
+search_button.grid(column=2, row=1)
 
 # ROW 2
 email_label = Label()
