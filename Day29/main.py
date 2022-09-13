@@ -36,19 +36,13 @@ def save_data():
         messagebox.showinfo(title='Missing fields',message='You\'ve left some fields empty!')
         return
 
-    user_response = messagebox.askokcancel(
-        title=url,
-        message=f'These are the details entered:\nEmail: {email}\nPassword:{password}\nIs it ok to save?'
-    )
+    with open('./user_data.txt', mode='a') as file:
+        file.write(f'{url} | {email} | {password}\n')
 
-    if user_response:
-        with open('./user_data.txt', mode='a') as file:
-            file.write(f'{url} | {email} | {password}\n')
-
-        website_URL.delete(0, 'end')
-        email_address.delete(0, 'end')
-        password_value.delete(0, 'end')
-        website_URL.focus()
+    website_URL.delete(0, 'end')
+    email_address.delete(0, 'end')
+    password_value.delete(0, 'end')
+    website_URL.focus()
 
 
 # ---------------------------- UI SETUP ------------------------------- #
