@@ -43,8 +43,10 @@ def save_data():
         messagebox.showinfo(title='Missing fields',message='You\'ve left some fields empty!')
         return
 
-    with open('./user_data.json', mode='w') as file:
-        json.dump(fp=file,  obj=new_data, indent=4)
+    with open('./user_data.json', mode='r') as file:
+        data = json.load(file)
+        data.update(new_data)
+        json.dump(data, file, indent=4)
 
     website_URL.delete(0, 'end')
     email_address.delete(0, 'end')
