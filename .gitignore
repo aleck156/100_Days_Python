@@ -2,3 +2,4 @@ _private/
 __pycache__
 .idea/
 *user_data.txt
+*user_data.json
