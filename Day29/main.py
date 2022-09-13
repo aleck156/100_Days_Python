@@ -44,7 +44,7 @@ def save_data():
         return
 
     with open('./user_data.json', mode='w') as file:
-        json.dump(f'{url} | {email} | {password}\n')
+        json.dump(fp=file,  obj=new_data)
 
     website_URL.delete(0, 'end')
     email_address.delete(0, 'end')
