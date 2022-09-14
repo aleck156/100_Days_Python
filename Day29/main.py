@@ -55,9 +55,23 @@ def save_data():
             json.dump(data, data_file, indent=4)
 
     website_URL.delete(0, 'end')
-    email_address.delete(0, 'end')
+    # email_address.delete(0, 'end')
     password_value.delete(0, 'end')
     website_URL.focus()
+
+def search_data():
+    url = website_URL.get()
+    email = email_address.get()
+
+    try:
+        with open('./user_data.json', mode='r') as data_file:
+            user_data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showinfo(title='Error!', message='404: File Not Found!')
+    else:
+        password = user_data[url]['Password']
+        messagebox.showinfo(title='Search results ...', message=f'Site:\t{url}\nEmail:\t{email}\nPassword:\t{password}')
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -82,7 +96,7 @@ website_URL.focus()
 website_URL.grid(column=1, row=1, sticky='w')
 
 search_button = Button(width=20)
-search_button.config(text='Search')
+search_button.config(text='Search', command=search_data)
 search_button.grid(column=2, row=1)
 
 # ROW 2
