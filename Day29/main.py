@@ -51,7 +51,7 @@ def save_data():
             json.dump(new_data, data_file, indent=4)
     else:
         data.update(new_data)
-        with open('./user_data.json', mode='a') as data_file:
+        with open('./user_data.json', mode='w') as data_file:
             json.dump(data, data_file, indent=4)
 
     website_URL.delete(0, 'end')
