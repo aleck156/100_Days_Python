@@ -61,18 +61,24 @@ def save_data():
 
 def search_data():
     url = website_URL.get()
-    email = email_address.get()
 
     try:
         with open('./user_data.json', mode='r') as data_file:
             user_data = json.load(data_file)
+
     except FileNotFoundError:
-        messagebox.showinfo(title='Error!', message='404: File Not Found!')
+
+
     else:
-        password = user_data[url]['Password']
-        messagebox.showinfo(title='Search results ...', message=f'Site:\t{url}\nEmail:\t{email}\nPassword:\t{password}')
-
-
+            if url in user_data:
+                email = user_data[url]['email']
+                password = user_data[url]['password']
+                messagebox.showinfo(
+                    title='Search results ...',
+                    message=f'Site:\t{url}\nEmail:\t{email}\nPassword:\t{password}'
+                )
+            else:
+                messagebox.showinfo(title='Error!', message=f'401: Data not found for {url}')
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
