@@ -14,8 +14,11 @@ window.title('FlashCard')
 canvas = Canvas(width=800, height=526)
 card_front_image = PhotoImage(file='./images/card_front.png')
 card_back_image = PhotoImage(file='./images/card_back.png')
-canvas.create_image(400,263, image=card_front_image)
+canvas.create_image(400, 263, image=card_front_image)
+canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(row=0, column=0, columnspan=2)
+
+canvas.create_text(400, 263, text='hello world', justify='center')
 
 
 # ROW 1
