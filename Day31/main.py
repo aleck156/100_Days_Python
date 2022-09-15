@@ -18,8 +18,20 @@ canvas.create_image(400, 263, image=card_front_image)
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(row=0, column=0, columnspan=2)
 
-canvas.create_text(400, 263, text='hello world', justify='center')
+canvas.create_text(
+    400, 150,
+    text='hello world',
+    justify='center',
+    font=('Arial', 20, 'bold')
+)
 
+
+canvas.create_text(
+    400, 263,
+    text='main text',
+    justify='center',
+    font=('Arial', 30, 'italic')
+)
 
 # ROW 1
 
