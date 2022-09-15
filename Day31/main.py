@@ -12,7 +12,9 @@ to_learn = words.to_dict(orient='records')
 
 def next_card():
     current_card = random.choice(to_learn)
-    print(current_card['English'])
+    print(current_card['French'])
+    canvas.itemconfig(card_title, text='French')
+    canvas.itemconfig(card_word, text=current_card['French'])
 
 window = Tk()
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
