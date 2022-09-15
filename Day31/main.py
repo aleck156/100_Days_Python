@@ -1,10 +1,13 @@
 from tkinter import *
 
+import pandas
+
 BACKGROUND_COLOR = "#B1DDC6"
 
 NEGATIVE = "❌"
 POSITIVE = "✅"
 
+words = pandas.read_csv('./data/french_words.csv')
 def next_card():
     pass
 
