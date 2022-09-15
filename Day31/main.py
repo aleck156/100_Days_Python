@@ -1,6 +1,6 @@
 from tkinter import *
-
 import pandas
+import random
 
 BACKGROUND_COLOR = "#B1DDC6"
 
@@ -8,8 +8,11 @@ NEGATIVE = "❌"
 POSITIVE = "✅"
 
 words = pandas.read_csv('./data/french_words.csv')
+to_learn = words.to_dict(orient='records')
+
 def next_card():
-    pass
+    current_card = random.choice(to_learn)
+    print(current_card['English'])
 
 window = Tk()
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
@@ -25,7 +28,7 @@ canvas.create_image(400, 263, image=card_front_image)
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(row=0, column=0, columnspan=2)
 
-canvas.create_text(
+card_title = canvas.create_text(
     400, 150,
     text='hello world',
     justify='center',
@@ -33,7 +36,7 @@ canvas.create_text(
 )
 
 
-canvas.create_text(
+card_word = canvas.create_text(
     400, 263,
     text='main text',
     justify='center',
