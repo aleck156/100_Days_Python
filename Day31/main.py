@@ -5,11 +5,15 @@ BACKGROUND_COLOR = "#B1DDC6"
 NEGATIVE = "❌"
 POSITIVE = "✅"
 
+def next_card():
+    pass
+
 window = Tk()
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 window.minsize(height=400, width=600)
 window.title('FlashCard')
 
+# ROW 1
 # use canvas to layer things on top of each other
 canvas = Canvas(width=800, height=526)
 card_front_image = PhotoImage(file='./images/card_front.png')
@@ -33,15 +37,13 @@ canvas.create_text(
     font=('Arial', 30, 'italic')
 )
 
-# ROW 1
-
 # ROW 2
 correct_image = PhotoImage(file='./images/right.png')
-right_button = Button(image=correct_image, highlightthickness=0, justify='center')
+right_button = Button(image=correct_image, highlightthickness=0, justify='center', command=next_card)
 right_button.grid(column=1, row=1)
 
 wrong_image = PhotoImage(file='./images/wrong.png')
-wrong_button = Button(image=wrong_image, highlightthickness=0, justify='center')
+wrong_button = Button(image=wrong_image, highlightthickness=0, justify='center', command=next_card)
 wrong_button.grid(column=0, row=1)
 
 
