@@ -7,7 +7,15 @@ BACKGROUND_COLOR = "#B1DDC6"
 NEGATIVE = "❌"
 POSITIVE = "✅"
 
-words = pandas.read_csv('./data/french_words.csv')
+try:
+    words = pandas.read_csv('./data/words_to_learn.csv')
+    print(f'File loaded: {words.}')
+except FileNotFoundError:
+    words = pandas.read_csv('./data/french_words.csv')
+else:
+    pass
+
+
 to_learn = words.to_dict(orient='records')
 current_card = {}
 
@@ -29,6 +37,8 @@ def next_card():
 def is_known():
     to_learn.remove(current_card)
     next_card()
+    data = pandas.DataFrame(to_learn)
+    data.to_csv('./data/words_to_learn.csv')
 
 window = Tk()
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
