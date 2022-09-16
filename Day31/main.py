@@ -9,7 +9,6 @@ POSITIVE = "✅"
 
 try:
     words = pandas.read_csv('./data/words_to_learn.csv')
-    print(f'File loaded: {words.}')
 except FileNotFoundError:
     words = pandas.read_csv('./data/french_words.csv')
 else:
