@@ -26,6 +26,10 @@ def next_card():
     canvas.itemconfig(canvas_bg_image, image=card_front_image)
     flip_timer = window.after(3000, flip_card)
 
+def is_known():
+    to_learn.remove(current_card)
+    next_card()
+
 window = Tk()
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 window.minsize(height=400, width=600)
@@ -60,7 +64,7 @@ next_card()
 
 # ROW 2
 correct_image = PhotoImage(file='./images/right.png')
-right_button = Button(image=correct_image, highlightthickness=0, justify='center', command=next_card)
+right_button = Button(image=correct_image, highlightthickness=0, justify='center', command=is_known)
 right_button.grid(column=1, row=1)
 
 wrong_image = PhotoImage(file='./images/wrong.png')
