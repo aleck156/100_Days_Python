@@ -61,11 +61,11 @@ if today_tuple in birthdays_dict:
 
     with smtplib.SMTP(HOST) as connection:
         connection.starttls()
-        connection.login()
+        connection.login(MY_EMAIL, PASS)
         connection.sendmail(
             from_addr=MY_EMAIL,
             to_addrs=birthday_person['email'],
-            msg=new_text
+            msg=f'Subject:Happy Birthday!\n\n{new_text}'
         )
 
 
