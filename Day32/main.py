@@ -24,11 +24,25 @@
 
 import smtplib
 import datetime as dt
+import random
+
+MY_EMAIL = 'gmail@test.com'
+PASS = 'TSET321'
 
 now = dt.datetime.now()
 weekday = now.weekday()
 
-if weekday == 4:
+if weekday == 6:
     with open('quotes.txt') as quote_file:
         all_qoutes = quote_file.read().split('\n')
-        print(all_qoutes)
+        quote = random.choice(all_qoutes)
+        print(quote)
+
+    with smtplib.SMTP('smtp.gmail.com') as connection:
+        connection.starttls()
+        connection.login(MY_EMAIL, PASS)
+        connection.sendmail(
+            from_addr=MY_EMAIL,
+            to_addrs=MY_EMAIL,
+            msg=f'Subject:Daily Motivation\n\n{quote}'
+        )
