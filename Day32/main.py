@@ -24,10 +24,11 @@
 
 import smtplib
 import datetime as dt
-import pandas as pd
 
 now = dt.datetime.now()
 weekday = now.weekday()
 
-if weekday == 0:
-    pass
+if weekday == 4:
+    with open('quotes.txt') as quote_file:
+        all_qoutes = quote_file.read().split('\n')
+        print(all_qoutes)
