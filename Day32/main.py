@@ -22,27 +22,51 @@
 # quotes = pandas.read_csv('./quotes.txt', sep="-")
 # print(quotes)
 
+
+# if weekday == 6:
+#     with open('quotes.txt') as quote_file:
+#         all_qoutes = quote_file.read().split('\n')
+#         quote = random.choice(all_qoutes)
+#         print(quote)
+#
+#     with smtplib.SMTP('smtp.gmail.com') as connection:
+#         connection.starttls()
+#         connection.login(MY_EMAIL, PASS)
+#         connection.sendmail(
+#             from_addr=MY_EMAIL,
+#             to_addrs=MY_EMAIL,
+#             msg=f'Subject:Daily Motivation\n\n{quote}'
+#         )
+
+
 import smtplib
 import datetime as dt
+import pandas as pd
 import random
 
 MY_EMAIL = 'gmail@test.com'
 PASS = 'TSET321'
 
-now = dt.datetime.now()
-weekday = now.weekday()
+today_tuple = (dt.datetime.now().month,dt.datetime.now().day)
+birthdays = pd.read_csv('./birthdays.csv')
 
-if weekday == 6:
-    with open('quotes.txt') as quote_file:
-        all_qoutes = quote_file.read().split('\n')
-        quote = random.choice(all_qoutes)
-        print(quote)
+birthdays_dict = {(data_row['month'], data_row['day']):data_row for (index, data_row) in birthdays.iterrows()}
 
-    with smtplib.SMTP('smtp.gmail.com') as connection:
-        connection.starttls()
-        connection.login(MY_EMAIL, PASS)
-        connection.sendmail(
-            from_addr=MY_EMAIL,
-            to_addrs=MY_EMAIL,
-            msg=f'Subject:Daily Motivation\n\n{quote}'
-        )
+if today_tuple in birthdays_dict:
+    # file_path =
+
+with open('./quotes.txt', mode='r') as quotes_file:
+    quotes = quotes_file.read().split('\n')
+    # quotes_dict = {
+    #     {
+    #         'Quote':elem.splot,
+    #         'Author:'
+    #     }
+    #     for elem in quotes
+    # }
+    daily_quote = random.choice(quotes)
+    print(daily_quote)
+
+
+
+
