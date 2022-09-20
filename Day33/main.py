@@ -4,13 +4,9 @@ import requests
 
 QUOTE_URL = 'https://api.kanye.rest'
 
-
 def get_quote():
     res = requests.get(QUOTE_URL)
     canvas.itemconfig(quote_text, text=f'{res.json()["quote"]}')
-    #Write your code here.
-
-
 
 window = Tk()
 window.title("Kanye Says...")
