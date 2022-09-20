@@ -1,12 +1,13 @@
 import datetime
 from tkinter import *
+import requests
 
 QUOTE_URL = 'https://api.kanye.rest'
 
 
 def get_quote():
-    current_time = datetime.datetime.now()
-    canvas.itemconfig(quote_text, text=f'{current_time}')
+    res = requests.get(QUOTE_URL)
+    canvas.itemconfig(quote_text, text=f'{res.json()["quote"]}')
     #Write your code here.
 
 
