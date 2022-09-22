@@ -12,7 +12,7 @@ class QuizzInterface:
         self.window.config(pady=20, padx=20, bg=THEME_COLOR)
 
         # row 1
-        self.score_label = tkinter.Label(text=f'Score: {0}', fg='white')
+        self.score_label = tkinter.Label(text=f'Score: {0}', fg='white', bg=THEME_COLOR)
         self.score_label.grid(column=1, row=0)
         # row 2
 
