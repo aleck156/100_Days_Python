@@ -6,8 +6,9 @@ params = {
 }
 
 res = requests.get(URL_ENDPOINT, params)
-
-print(res.json()['results'])
+res.raise_for_status()
+data = res.json()['results']
+print(data)
 
 question_data = [
     {
