@@ -21,7 +21,8 @@ class QuizzInterface:
             (150,125),
             text='testing',
             fill=THEME_COLOR,
-            justify='center'
+            justify='center',
+            font=FONT_CONFIG
         )
 
         self.canvas.grid(row=1, column=0, columnspan=2)
