@@ -1,3 +1,14 @@
+import requests
+URL_ENDPOINT = 'https://opentdb.com/api.php'
+params = {
+    'amount': 10,
+    'type': 'boolean'
+}
+
+res = requests.get(URL_ENDPOINT, params)
+
+print(res.json()['results'])
+
 question_data = [
     {
         "category": "Science: Computers",
