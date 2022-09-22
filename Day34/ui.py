@@ -1,5 +1,10 @@
+from tkinter import *
+
+
 THEME_COLOR = "#375362"
 
-class QuizzInterface():
+class QuizzInterface:
     def __init__(self):
-        pass
+        self.window = Tk()
+        self.window.title("Quizzler")
+        self.window.mainloop()
