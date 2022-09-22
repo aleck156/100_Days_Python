@@ -3,7 +3,7 @@ from tkinter import *
 
 
 THEME_COLOR = "#375362"
-FONT_CONFIG = ('Arial', 20, 'italix')
+FONT_CONFIG = ('Arial', 20, 'italic')
 
 class QuizzInterface:
     def __init__(self):
@@ -17,6 +17,12 @@ class QuizzInterface:
 
         # row 2
         self.canvas = tkinter.Canvas(width=300, height=250, bg='white')
+        self.question_text = self.canvas.create_text(
+            (150,125),
+            text='testing',
+            fill=THEME_COLOR,
+            justify='center'
+        )
 
         self.canvas.grid(row=1, column=0, columnspan=2)
         # row 3
