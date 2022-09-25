@@ -34,7 +34,7 @@ class QuizzInterface:
         self.true_button = tkinter.Button(
             image=self.true_image,
             highlightthickness=0,
-            command=self.quiz.check_answer("True")
+            command=self.true_pressed
         )
         self.true_button.grid(row=2, column=0)
 
@@ -42,13 +42,19 @@ class QuizzInterface:
         self.false_button = tkinter.Button(
             image=self.false_image,
             highlightthickness=0,
-            command=self.quiz.check_answer("False")
+            command=self.false_pressed
         )
         self.false_button.grid(row=2, column=1)
 
         self.get_next_question()
 
         self.window.mainloop()
+
+    def true_pressed(self):
+        self.quiz.check_answer("True")
+
+    def false_pressed(self):
+        self.quiz.check_answer("False")
 
     def get_next_question(self):
         q_text = self.quiz.next_question()
