@@ -31,11 +31,19 @@ class QuizzInterface:
 
         # row 3
         self.true_image = PhotoImage(file="./images/true.png")
-        self.true_button = tkinter.Button(image=self.true_image, highlightthickness=0)
+        self.true_button = tkinter.Button(
+            image=self.true_image,
+            highlightthickness=0,
+            command=self.quiz.check_answer("True")
+        )
         self.true_button.grid(row=2, column=0)
 
         self.false_image = PhotoImage(file="./images/false.png")
-        self.false_button = tkinter.Button(image=self.false_image, highlightthickness=0)
+        self.false_button = tkinter.Button(
+            image=self.false_image,
+            highlightthickness=0,
+            command=self.quiz.check_answer("False")
+        )
         self.false_button.grid(row=2, column=1)
 
         self.get_next_question()
