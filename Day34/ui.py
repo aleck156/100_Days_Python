@@ -65,5 +65,12 @@ class QuizzInterface:
 
     def get_next_question(self):
         self.canvas.config(bg='white')
-        q_text = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, text=q_text)
+        if self.quiz.still_has_questions():
+            self.score_label.config(text=f'Score: {self.quiz.score} / {self.quiz.question_number}')
+            q_text = self.quiz.next_question()
+            self.canvas.itemconfig(self.question_text, text=q_text)
+        else:
+
+            self.canvas.itemconfig(text=f'Your final score is {self.quiz.score} / {self.quiz.question_number}')
+            self.true_button.config(state='disabled')
+            self.false_button.config(state='disabled')
