@@ -64,5 +64,6 @@ class QuizzInterface:
         self.window.after(1000, self.get_next_question)
 
     def get_next_question(self):
+        self.canvas.config(bg='white')
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
