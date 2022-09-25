@@ -2,7 +2,8 @@ import requests
 URL_ENDPOINT = 'https://opentdb.com/api.php'
 params = {
     'amount': 10,
-    'type': 'boolean'
+    'type': 'boolean',
+    'category': 18
 }
 
 res = requests.get(URL_ENDPOINT, params)
