@@ -6,10 +6,15 @@ lon = 19.944981
 
 API_key = API_KEYS.OPENWEATHERMAP_API_KEY
 
-URL = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_key}'
+OWN_Endpoint = 'https://api.openweathermap.org/data/3.0/onecall'
+weather_params = {
+    'lat': lat,
+    'lon': lon,
+    'appid': API_key
+}
 
-res = requests.get(URL)
+res = requests.get(OWN_Endpoint, params=weather_params)
 
-print(URL)
+print(API_key)
 print(res)
 print(res.json())
