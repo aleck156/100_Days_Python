@@ -40,6 +40,8 @@ res = requests.get(OWM_Endpoint, params=weather_params)
 res.raise_for_status()
 data_set = res.json()['list']
 
+will_rain = False
+
 for data_piece in data_set:
     # print(data_piece)
     extract_time =datetime.datetime.fromtimestamp(data_piece['dt'])
@@ -47,3 +49,7 @@ for data_piece in data_set:
     description = data_piece['weather'][0]['description']
     condition_code = data_piece['weather'][0]['id']
     print(f'[{extract_time}]:\t{condition_code}\t{main}\t{description}')
+    if int(condition_code) < 700:
+        print('Bring an umbrella')
+        will_rain = True
+        break
