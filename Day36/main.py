@@ -1,4 +1,5 @@
 import requests
+from twilio.rest import Client
 
 from Personal_Projects import API_KEYS as ak
 STOCK_NAME = "TSLA"
@@ -6,6 +7,9 @@ COMPANY_NAME = 'Tesla'
 
 STOCK_ENDPOINT = 'https://www.alphavantage.co/query'
 NEWS_ENDPOINT = 'https://newsapi.org/v2/everything'
+
+TWILIO_SID = ak.TWILIO_SID
+TWILIO_AUTH_TOKEN = ak.TWILIO_AUTH_TOKEN
 
 # PARAMS
 stock_params = {
