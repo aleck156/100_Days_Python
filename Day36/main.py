@@ -34,7 +34,11 @@ difference = yesterday_closing_price - day_before_yesterday_closing_price
 diff_percent = (difference / yesterday_closing_price) * 100
 print(diff_percent)
 
-if diff_percent > 5:
+
+
+if abs(diff_percent) > 1:
     news_response = requests.get(NEWS_ENDPOINT, params=news_param)
     news_response.raise_for_status()
-    print(news_response.json()['articles'])
+    top_three_articles = news_response.json()['articles'][:3]
+    for article in top_three_articles:
+        print(f'Headline:\t\t{article["title"]}\n{article["description"]}\n')
