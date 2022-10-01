@@ -38,12 +38,18 @@ difference = yesterday_closing_price - day_before_yesterday_closing_price
 diff_percent = (difference / yesterday_closing_price) * 100
 print(diff_percent)
 
-
-
 if abs(diff_percent) > 1:
     news_response = requests.get(NEWS_ENDPOINT, params=news_param)
     news_response.raise_for_status()
     top_three_articles = news_response.json()['articles'][:3]
     formatted_article_list = [f'Headline:\t\t{article["title"]}\n{article["description"]}\n' for article in top_three_articles]
     print(formatted_article_list)
+
+    client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
+    for article in formatted_article_list:
+        message = client.messages.create(
+            body=article,
+            from_='+12345678912',
+            to='+321654987123'
+        )
 
