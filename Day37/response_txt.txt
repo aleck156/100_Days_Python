@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+
+data-admin-domain="//blog.hatena.ne.jp"
+data-admin-origin="https://blog.hatena.ne.jp"
+data-author="a-know"
+data-avail-langs="ja en"
+data-blog="pixela-docs.hatenablog.com"
+data-blog-host="pixela-docs.hatenablog.com"
+data-blog-is-public="1"
+data-blog-name="Pixela API Document"
+data-blog-owner="a-know"
+data-blog-uri="https://docs.pixe.la/"
+data-blog-uuid="17680117127071187821"
+data-blogs-uri-base="https://docs.pixe.la"
+data-brand="pro"
+data-data-layer="{&quot;hatenablog&quot;:{&quot;admin&quot;:{},&quot;analytics&quot;:{&quot;brand_property_id&quot;:&quot;&quot;,&quot;measurement_id&quot;:&quot;&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;,&quot;property_id&quot;:&quot;&quot;,&quot;separated_property_id&quot;:&quot;UA-29716941-25&quot;},&quot;blog&quot;:{&quot;blog_id&quot;:&quot;17680117127071187821&quot;,&quot;content_seems_japanese&quot;:&quot;false&quot;,&quot;disable_ads&quot;:&quot;pro&quot;,&quot;enable_ads&quot;:&quot;false&quot;,&quot;enable_keyword_link&quot;:&quot;false&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;false&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;is_public&quot;:&quot;true&quot;,&quot;is_responsive_view&quot;:&quot;true&quot;,&quot;is_sleeping&quot;:&quot;false&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;name&quot;:&quot;Pixela API Document&quot;,&quot;owner_name&quot;:&quot;a-know&quot;,&quot;uri&quot;:&quot;https://docs.pixe.la/&quot;},&quot;brand&quot;:&quot;pro&quot;,&quot;page_id&quot;:&quot;error&quot;,&quot;permalink_entry&quot;:null,&quot;pro&quot;:&quot;pro&quot;,&quot;router_type&quot;:&quot;blogs&quot;}}"
+data-device="pc"
+data-dont-recommend-pro="false"
+data-global-domain="https://hatenablog.com"
+data-globalheader-color="b"
+data-globalheader-type="pc"
+data-has-touch-view="1"
+data-help-url="https://help.hatenablog.com"
+data-hide-header="1"
+data-no-suggest-touch-view="1"
+data-page="error"
+data-parts-domain="https://hatenablog-parts.com"
+data-plus-available="1"
+data-pro="true"
+data-router-type="blogs"
+data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218"
+data-sentry-environment="production"
+data-sentry-sample-rate="0.1"
+data-static-domain="https://cdn.blog.st-hatena.com"
+data-version="c0117b55f1e4bd3362bbd6be178153"
+
+
+
+  itemscope
+  itemtype="http://schema.org/Blog"
+
+
+  data-initial-state="{}"
+
+  >
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+  
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  
+
+
+
+  
+  <meta name="Hatena::Bookmark" content="nocomment"/>
+
+
+  <meta name="robots" content="max-image-preview:large" />
+
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11" />
+  <title>Not Found - Pixela API Document</title>
+
+  
+
+
+  
+  
+
+<meta itemprop="name" content="Not Found - Pixela API Document"/>
+
+  <meta itemprop="image" content="https://cdn.user.blog.st-hatena.com/default_entry_og_image/4935026/1556093381299282"/>
+
+
+  <meta property="og:title" content="Not Found - Pixela API Document"/>
+<meta property="og:type" content="blog"/>
+  <meta property="og:url" content=""/>
+
+  
+  
+  
+  <meta property="og:image" content="https://cdn.image.st-hatena.com/image/scale/69e67ab98a5e2b8bd4b10a22769924ed28b747bb/backend=imager;enlarge=0;height=1000;version=1;width=1200/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fdefault_entry_og_image%2F4935026%2F1556093381299282"/>
+
+<meta property="og:image:alt" content="Not Found - Pixela API Document"/>
+  <meta property="og:description" content="API Document for Pixela ( https://pixe.la/ ) ." />
+<meta property="og:site_name" content="Pixela API Document"/>
+
+    <meta name="twitter:card" content="summary" />  <meta name="twitter:title" content="Not Found - Pixela API Document" />  <meta name="twitter:description" content="API Document for Pixela ( https://pixe.la/ ) ." />  <meta name="twitter:app:name:iphone" content="Hatena Blog App" />
+  <meta name="twitter:app:id:iphone" content="583299321" />
+  <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=https%3A%2F%2Fdocs.pixe.la%2Fv1%2Fusers%2Frailgun6969%2Fgraphs" />
+  
+    <meta name="description" content="API Document site for Pixela - https://pixe.la/ . Pixela is the Pixelation API service. With this service, you can get a GitHub like graph that expresses the degree of your daily various activities on a basis with a vivid gradation." />
+
+
+  
+<script
+  id="embed-gtm-data-layer-loader"
+  data-data-layer-page-specific=""
+>
+(function() {
+  function loadDataLayer(elem, attrName) {
+    if (!elem) { return {}; }
+    var json = elem.getAttribute(attrName);
+    if (!json) { return {}; }
+    return JSON.parse(json);
+  }
+
+  var globalVariables = loadDataLayer(
+    document.documentElement,
+    'data-data-layer'
+  );
+  var pageSpecificVariables = loadDataLayer(
+    document.getElementById('embed-gtm-data-layer-loader'),
+    'data-data-layer-page-specific'
+  );
+
+  var variables = [globalVariables, pageSpecificVariables];
+
+  if (!window.dataLayer) {
+    window.dataLayer = [];
+  }
+
+  for (var i = 0; i < variables.length; i++) {
+    window.dataLayer.push(variables[i]);
+  }
+})();
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4CXTW');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+  <link rel="shortcut icon" href="https://docs.pixe.la/icon/favicon">
+<link rel="apple-touch-icon" href="https://docs.pixe.la/icon/touch">
+<link rel="icon" sizes="192x192" href="https://docs.pixe.la/icon/link">
+
+  
+
+<link rel="alternate" type="application/atom+xml" title="Atom" href="https://docs.pixe.la/feed"/>
+<link rel="alternate" type="application/rss+xml" title="RSS2.0" href="https://docs.pixe.la/rss"/>
+
+  
+  
+  <link rel="author" href="http://www.hatena.ne.jp/a-know/">
+
+
+  
+
+
+  
+    <link rel="stylesheet" type="text/css" href="https://cdn.blog.st-hatena.com/css/blog.css?version=c0117b55f1e4bd3362bbd6be178153"/>
+
+    
+  <link rel="stylesheet" type="text/css" href="https://usercss.blog.st-hatena.com/blog_style/17680117127071187821/366ff618973ad9abd549188ce9a5ea67bb3aa30f"/>
+  
+  
+
+  
+
+  
+<script> </script>
+
+  
+<style>
+  div#google_afc_user,
+  div.google-afc-user-container,
+  div.google_afc_image,
+  div.google_afc_blocklink {
+      display: block !important;
+  }
+</style>
+
+
+  
+
+  
+
+  <meta name="author" content="@a_know / a-know">
+<script defer data-domain="docs.pixe.la" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+  <body class="page-error header-image-enable enable-top-editarea enable-bottom-editarea globalheader-off">
+    
+
+    
+    
+    
+    
+
+    <div id="globalheader-container"
+  data-brand="hatenablog"
+  style="display: none"
+  
+  
+  >
+  <iframe id="globalheader" height="37" frameborder="0" allowTransparency="true"></iframe>
+</div>
+
+
+    <div id="container">
+      <div id="container-inner">
+        <header id="blog-title" data-brand="hatenablog">
+  <div id="blog-title-inner" style="background-image: url('https://cdn-ak.f.st-hatena.com/images/fotolife/a/a-know/20190424/20190424171214.png'); background-position: center -41px;">
+    <div id="blog-title-content">
+      <h1 id="title"><a href="https://docs.pixe.la/">Pixela API Document</a></h1>
+      
+        <h2 id="blog-description">API Document for Pixela ( https://pixe.la/ ) .</h2>
+      
+    </div>
+  </div>
+</header>
+
+        
+  <div id="top-editarea">
+    <div>
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEADP23W&placement=pixela" id="_carbonads_js"></script>
+</div>
+  </div>
+
+
+        
+        
+
+<div id="content" class="hfeed">
+  <div id="content-inner">
+    <div id="wrapper">
+      <div id="main">
+        <div id="main-inner">
+            <article class="entry no-entry">
+              <div class="entry-inner">
+                <div class="entry-content">
+                  
+                    <h1>Not Found</h1>
+                    <p>Sorry, we can't find the page you're looking for.</p>
+                  
+                </div>
+                <div class="entry-footer variable-rectangle-ad">
+                  
+                </div>
+              </div>
+            </article>
+        </div>
+      </div>
+
+      <aside id="box1">
+  <div id="box1-inner">
+  </div>
+</aside>
+
+    </div><!-- #wrapper -->
+
+    
+<aside id="box2">
+  
+  <div id="box2-inner">
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">About this site</div>
+  <div class="hatena-module-body">
+    <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/a/a-know/20181229/20181229155611.png"><br>
+
+This site is API Document for Pixela - <a href="https://pixe.la/">https://pixe.la/</a> .<br>
+<br>
+The Help Center is <a href="https://help.pixe.la/" target="_blank">here</a>.<br>
+<br>
+Pixela is the Pixelation API service. With this service, you can get a GitHub like graph that expresses the degree of your daily various activities on a basis with a vivid gradation.<br>
+<br>
+<div id="svg-load-area"></div>
+<br>
+<div><div class="patreon-badge"><a href="https://www.patreon.com/bePatron?u=19694440" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></div></div>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    API Document - User
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/post-user">Create a user</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/put-user">Update a user</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/delete-user">Delete a user</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    API Reference - User Profile
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://pixela-docs.hatenablog.com/entry/get-profile">View user profile</a>
+        </li>
+      
+        <li>
+          <a href="https://pixela-docs.hatenablog.com/entry/put-profile">Update user profile</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    API Reference - Graph
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/post-graph">Create a graph</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-graph">Get graph definitions</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-svg">Get a graph SVG</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/put-graph">Update a graph</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/delete-graph">Delete a graph</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-graph-html">View a graph detail</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-graph-pixels">Get graph pixels list</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-graph-stats">Get a graph stats</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-a-graph-def">Get a graph definition</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    API Reference - Pixel
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/post-pixel">Post a pixel</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-pixel">Get a pixel</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/put-pixel">Update a pixel</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/delete-pixel">Delete a pixel</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    API Reference - Retina
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-a-retina">Get a retina</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    APIs - Instant recording
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/increment-pixel">Increment a pixel</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/decrement-pixel">Decrement a pixel</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/post-stopwatch">Measuring and recording time</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    API Reference - Webhook
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/post-webhook">Create a webhook</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/get-webhooks">Get webhooks</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/invoke-webhook">Invoke a webhook</a>
+        </li>
+      
+        <li>
+          <a href="https://docs.pixe.la/entry/delete-webhook">Delete a webhook</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    Links
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://github.com/a-know/Pixela/wiki/Third-Party-Libraries">Third Party Libraries</a>
+        </li>
+      
+        <li>
+          <a href="https://github.com/a-know/Pixela/wiki/Useful-case-examples">Useful case examples</a>
+        </li>
+      
+        <li>
+          <a href="https://github.com/a-know/pi">Official CLI tool</a>
+        </li>
+      
+        <li>
+          <a href="https://github.com/a-know/Pixela/wiki/Terms-of-Service">Term of Service (en)</a>
+        </li>
+      
+        <li>
+          <a href="https://github.com/a-know/Pixela/wiki/%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84%EF%BC%88Terms-of-Service-Japanese-Version%EF%BC%89">Term of Service (ja)</a>
+        </li>
+      
+        <li>
+          <a href="https://github.com/a-know/Pixela-docs">Source code of this docs</a>
+        </li>
+      
+        <li>
+          <a href="https://github.com/a-know/Pixela/wiki/How-to-support-Pixela-by-Patreon-%EF%BC%8F-Use-Limited-Features">How to support Pixela by Patreon ／ Use Limited Features</a>
+        </li>
+      
+        <li>
+          <a href="https://help.pixe.la/">Help Center</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">Author</div>
+  <div class="hatena-module-body">
+    <p>© 2018 a-know | moshimo-works.<br>
+<a href="https://github.com/a-know">GitHub</a> / <a href="https://twitter.com/a_know">Twitter</a> / <a href="https://a-know.me">Website</a></p>
+
+  </div>
+</div>
+
+    
+    
+  </div>
+</aside>
+
+
+
+  </div>
+</div>
+
+        
+
+        
+  <div id="bottom-editarea">
+    <!-- <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/tippy.js@3"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    $('#svg-load-area').load('https://pixe.la/v1/users/pixela/graphs/pv-docs?mode=short', function(){
+        tippy('.each-day', {
+            arrow: true,
+            content: function(reference) {
+                const contentDate = reference.getAttribute('data-date')
+                const contentUnit = reference.getAttribute('data-unit')
+                const contentCount = reference.getAttribute('data-count')
+                const contentOptional = reference.getAttribute('data-optional')
+                const container = document.createElement('div')
+                const quantityNode = document.createTextNode(contentCount + " " + contentUnit + " on " + contentDate);
+                container.appendChild(quantityNode);
+                return container
+            }
+        });
+    });
+});
+</script>
+  </div>
+
+
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+<div class="quote-box">
+  <div class="tooltip-quote tooltip-quote-stock">
+    <i class="blogicon-quote" title="Save quote"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet">
+    <a class="js-tweet-quote" target="_blank" data-track-name="quote-tweet" data-track-once><i class="blogicon-twitter" title="引用してツイートする"></i></a>
+  </div>
+</div>
+
+<div class="quote-stock-panel" id="quote-stock-message-box" style="position: absolute; z-index: 3000">
+  <div class="message-box" id="quote-stock-succeeded-message" style="display: none">
+    <p>Quote saved.</p>
+    <button class="btn btn-primary" id="quote-stock-show-editor-button" data-track-name="curation-quote-edit-button">View saved quotes</button>
+    <button class="btn quote-stock-close-message-button">Close</button>
+  </div>
+
+  <div class="message-box" id="quote-login-required-message" style="display: none">
+    <p>Login to quote this blog</p>
+    <button class="btn btn-primary" id="quote-login-button">Login</button>
+    <button class="btn quote-stock-close-message-button">Close</button>
+  </div>
+
+  <div class="error-box" id="quote-stock-failed-message" style="display: none">
+    <p>Failed to save quote. Please try again later.</p>
+    <button class="btn quote-stock-close-message-button">Close</button>
+  </div>
+
+  <div class="error-box" id="unstockable-quote-message-box" style="display: none; position: absolute; z-index: 3000;">
+    <p>You cannot quote because this article is private.</p>
+  </div>
+</div>
+
+<script type="x-underscore-template" id="js-requote-button-template">
+  <div class="requote-button js-requote-button">
+    <button class="requote-button-btn tipsy-top" title="Quote"><i class="blogicon-quote"></i></button>
+  </div>
+</script>
+
+
+
+    
+    <div id="hidden-subscribe-button" style="display: none;">
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box"
+  
+  >
+
+  <a href="#" class="hatena-follow-button js-hatena-follow-button">
+    <span class="subscribing">
+      <span class="foreground">Subscribed</span>
+      <span class="background">unsubscribe</span>
+    </span>
+    <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once>
+      <span class="foreground">Subscribe</span>
+      <span class="background">Subscribe</span>
+    </span>
+  </a>
+  <div class="subscription-count-box js-subscription-count-box">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">
+    </span>
+  </div>
+</div>
+
+    </div>
+
+    
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+
+<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.min.js?v=1.12.4&amp;version=c0117b55f1e4bd3362bbd6be178153"></script>
+
+
+
+<script id="vendor-js" data-env="production" type="text/javascript" src="https://cdn.blog.st-hatena.com/js/vendor.js?version=c0117b55f1e4bd3362bbd6be178153" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/texts-en.js?version=c0117b55f1e4bd3362bbd6be178153"></script>
+<script id="hatenablog-js" data-env="production"
+  type="text/javascript" src="https://cdn.blog.st-hatena.com/js/hatenablog.js?version=c0117b55f1e4bd3362bbd6be178153" crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+  </body>
+</html>
