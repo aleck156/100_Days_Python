@@ -21,7 +21,7 @@ endpoint_params = {
 
 
 
-graph_endpoint = f'{pixela_endpoint}/{USERNAME}/graphs/'
+graph_endpoint = f'{pixela_endpoint}{USERNAME}/graphs/'
 graphID = 'graph1'
 
 graph_config = {
