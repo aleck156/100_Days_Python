@@ -21,9 +21,10 @@ endpoint_params = {
 
 
 graph_endpoint = f'{pixela_endpoint}/{USERNAME}/graphs'
+graphID = 'graph1'
 
 graph_config = {
-    'id': 'graph1',
+    'id': graphID,
     'name': 'cycling graph',
     'unit': 'km',
     'type': 'float',
@@ -34,8 +35,9 @@ pixela_headers = {
     'X-USER-TOKEN': ak.PIXELA_TOKEN
 }
 
-response_graph = requests.post(url=graph_endpoint, json=graph_config, headers=pixela_headers)
+# response_graph = requests.post(url=graph_endpoint, json=graph_config, headers=pixela_headers)
 # with open('./response_txt.html', mode='w+') as file:
 #     file.write(response_graph.text)
+# print(response_graph.text)
 
-print(response_graph.text)
+pixel_creation = f'{pixela_endpoint}{USERNAME}/graphs/{graphID}'
