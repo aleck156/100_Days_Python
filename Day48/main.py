@@ -1,0 +1,1 @@
+chrome_driver_path = "/home/railgun/Downloads/chromedriver_linux64/"
