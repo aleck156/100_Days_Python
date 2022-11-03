@@ -30,7 +30,8 @@ while True:
         most_expensive_upgrade = upgrade_list[-1]
         most_expensive_upgrade.click()
         print(most_expensive_upgrade.text)
-        # click it, and make it added
-        # for elem in upgrade_list:
-        #     print(f'{elem.text}')
+        print(most_expensive_upgrade.find_element(By.CSS_SELECTOR, ''))
 
+
+# /html/body/div[3]/div[5]/div/div[5]/b/text()[2]
+# b/text()[2]
